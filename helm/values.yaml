@@ -1,0 +1,21 @@
+resources:
+  limits:
+    cpu: 2
+    memory: 512Mi
+  requests:
+    cpu: 0.25
+    memory: 256Mi
+
+nginx:
+  name: "nginx"
+  replicas: 1
+  image: "nalcheg/geoex-nginx"
+  pullPolicy: "Always"
+  port: 80
+
+phpfpm:
+  name: "php-fpm"
+  replicas: 1
+  image: "nalcheg/geoex-php-fpm"
+  pullPolicy: "Always"
+  port: 9000
